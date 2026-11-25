@@ -108,8 +108,53 @@
         .catch((error) => {
             console.log(error);
         });
+        let emp = [
+            {
+                emp_id: 1,
+                name: "kumar",
+                age: 20,
+                salary: 40000,
+                skills: ["html", "css", "javascript"]
+            },
+            {
+                emp_id: 2,
+                name: "sneha",
+                age: 22,
+                salary: 50000,
+                company : {
+                    c1:"Tcs",
+                    c2:"Infosys",
+                }
+                
+            }
+        ]
+
+       // let copied_data = {...emp[0]};
+       // copied_data.salary = 80000;
+
+       // let copied_data = {...emp[0]};
+        //copied_data.salary = 80000;
+        //copied_data.company.c1 = "Google";
+
+        let copied_data = JSON.parse(JSON.stringify(emp[0]));
+        copied_data.salary = 80000;
+
+        console.log("Original Data:",emp);
+        console.log("Copied Data:",copied_data);
+
+        
+        
+        console.log(emp[0].skills[1]);
+        console.log(emp[1].company.c1);
+
+        let stringify_data = JSON.stringify(emp);
+        console.log(stringify_data);
+        let parse_data = JSON.parse(stringify_data);
+        console.log(parse_data[0].name);
+        
 
 </script>
-
 </body>
 </html>
+
+    
